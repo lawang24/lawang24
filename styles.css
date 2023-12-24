@@ -37,10 +37,7 @@ section {
 
 nav {
     display: flex;
-    flex-wrap: wrap;
-
     z-index: 9999;
-
     justify-content: space-between;
     align-items: center;
     background-color: white;
@@ -53,7 +50,6 @@ nav {
     left: 0;
     border-bottom: 1px solid white;
     opacity: .95;
-    box-sizing: border-box;
 }
 
 .logo {
@@ -78,7 +74,6 @@ nav .menu,
 nav .menu {
     flex-grow: 1;
     justify-content: space-between;
-    margin-top: 1.5%;
 }
 
 nav .list {
@@ -87,7 +82,7 @@ nav .list {
     gap: 20px;
 }
 
-.menu > .left {
+.menu>.left {
     margin-left: 10%;
 }
 
@@ -163,6 +158,22 @@ nav label {
     text-align: start;
     font-size: 4rem;
     width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+    .title {
+        font-size: 2rem;
+        text-align: center;
+        padding: 0px 30px;
+        
+    }
+}
+
+@media screen and (500px<width<1000px) {
+    .title {
+        font-size: 3rem;
+        text-align: center;
+    }
 }
 
 .title__alternate {
@@ -274,22 +285,45 @@ nav label {
 
 #about_me p {
     font-size: 1.1rem;
-    width:50%;
+    width: 50%;
     text-align: left;
 }
 
-#about_me .content div {
+.bio-wrap {
     display: flex;
     width: 100%;
     justify-content: space-around;
     align-items: center;
 }
 
-#about_me .headshot {
+.headshot {
     width: 30%;
     height: 20%;
     object-fit: cover;
 }
+
+
+/* FIX .CONTENT DIV SHIT */
+@media screen and (width <=650px) {
+    .bio-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .headshot {
+        width: 80%;
+    }
+
+    #about_me p {
+        font-size: 1.1rem;
+        width: 80%;
+        text-align: left;
+    }
+}
+
 
 /*--------------------------------------------------------------------------------*/
 
@@ -303,13 +337,27 @@ nav label {
     padding-top: 3%;
 }
 
-#projects>div{
-    display:flex;
-    width:70%;
+.project_table {
+    display: flex;
+    width: 70%;
     gap: 5%;
     justify-content: space-around;
 }
 
+@media screen and (750px< width < 1200px) {
+    .project_table {
+        width: 90%;
+    }
+}
+
+@media screen and (width <=750px) {
+    .project_table {
+        margin-top: 100px;
+        width: 70%;
+        flex-direction: column;
+        gap: 100px;
+    }
+}
 
 #projects .illustration {
     width: 100%;
@@ -324,7 +372,7 @@ nav label {
 
 #projects .chessgame {
     height: 57%;
-    width:96%;
+    width: 96%;
     position: absolute;
     top: 7%;
     left: 2%;
@@ -357,12 +405,12 @@ nav label {
 }
 
 #experience>ul {
-    width: 50%;
+    width: 100%;
+    max-width: 900px;
     list-style-type: none;
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    gap: 15% 20%;
+    grid-template-columns: 1fr 1fr;
+    gap: 5% 15%;
     justify-content: center;
     align-items: center;
 }
@@ -373,7 +421,8 @@ nav label {
     color: black;
 }
 
-#experience>.headline, #projects .headline {
+#experience>.headline,
+#projects .headline {
     margin-bottom: 1rem;
 }
 
@@ -383,6 +432,22 @@ nav label {
 
 #experience img {
     width: 100%;
+}
+
+@media screen and (width <=600px) {
+    #experience>ul {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        list-style-type: none;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #experience>ul>li{
+        margin: 20px auto ;
+    }
+
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -444,13 +509,36 @@ nav label {
     text-align: left;
 }
 
-
+@media screen and (width <=600px){
+    .flip-card-back>h2{
+        font-size: 1.3rem;
+    }
+    .flip-card-back li{
+        font-size: .9rem;
+    }
+}
 /*--------------------------------------------------------------------------------*/
 
 #ending {
+    display: flex;
     justify-content: center;
     margin: 5% 0;
     gap: 10%;
     height: 10vh;
     min-height: 0;
+}
+
+@media screen and (750px< width < 1200px) {
+    .project_table {
+        width: 90%;
+    }
+}
+
+@media screen and (width <=750px) {
+    #ending {
+        margin-top: 50px;
+        flex-direction: column;
+        font-size: small;
+        margin-bottom: 40px;
+    }
 }
