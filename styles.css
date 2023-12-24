@@ -111,6 +111,24 @@ nav label {
     margin-right: 4%;
 }
 
+@media screen and (width<=450px) {
+
+    nav .menu,
+    .left,
+    .right {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .menu>.left {
+        margin-left: 1%;
+    }
+
+    nav .list {
+        gap: 10px;
+    }
+}
 
 /*--------------------------------------------------------------------------------*/
 
@@ -165,7 +183,7 @@ nav label {
         font-size: 2rem;
         text-align: center;
         padding: 0px 30px;
-        
+
     }
 }
 
@@ -443,9 +461,9 @@ nav label {
         justify-content: center;
         align-items: center;
     }
-    
-    #experience>ul>li{
-        margin: 20px auto ;
+
+    #experience>ul>li {
+        margin: 20px auto;
     }
 
 }
@@ -509,14 +527,16 @@ nav label {
     text-align: left;
 }
 
-@media screen and (width <=600px){
-    .flip-card-back>h2{
+@media screen and (width <=600px) {
+    .flip-card-back>h2 {
         font-size: 1.3rem;
     }
-    .flip-card-back li{
+
+    .flip-card-back li {
         font-size: .9rem;
     }
 }
+
 /*--------------------------------------------------------------------------------*/
 
 #ending {
